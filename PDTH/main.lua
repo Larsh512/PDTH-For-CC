@@ -5,6 +5,7 @@ local x,y = 1,1
 local w, h
 local policeassaultind
 local policeassault = false
+print("Select between hoxton, dallas, chains, or wolf. all spelt lowercase. Iff you dont choose you will play as hoxton.")
 playercharoption = read()
 playerrotation = "right"
 function obsi.load()
@@ -16,11 +17,11 @@ function obsi.load()
 		player = obsi.graphics.newImage("wolf.nfp")
 	elseif playercharoption == "chains" then -- Black dude, Thats it really... he's black... he has a gun... And... Yeah.
 		player = obsi.graphics.newImage("chains.nfp")
-	else 
+	else -- incase the player doesnt choose, Just make them my boi hox.
 		playercharoption = "hoxton"
 		player = obsi.graphics.newImage("hoxton.nfp")
 	end
-	policeassaultind = obsi.graphics.newImage("Policeassault.nfp")
+	policeassaultind = obsi.graphics.newImage("Policeassault.nfp") -- Police assault indicator.
 end
 
 function obsi.update()

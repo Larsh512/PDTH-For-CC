@@ -26,12 +26,14 @@ end
 
 function obsi.update()
  w, h = obsi.graphics.getPixelSize()
- forward = obsi.keyboard.isDown("e")
- backward = obsi.keyboard.isDown("d")
- left = obsi.keyboard.isDown("s")
- right = obsi.keyboard.isDown("f")
- turnleft = obsi.keyboard.isDown("left")
- turnright = obsi.keyboard.isDown("right") 
+ -- KEYBINDS
+ forward = obsi.keyboard.isDown("e") -- Forward
+ backward = obsi.keyboard.isDown("d") -- Backward
+ left = obsi.keyboard.isDown("s") -- Left
+ right = obsi.keyboard.isDown("f") -- Right
+ turnleft = obsi.keyboard.isDown("left") -- Left turn
+ turnright = obsi.keyboard.isDown("right")  -- Right turn
+ -- END OFF KEYBINDS
  local playerpixel = 1
  	if playerrotation == "right" then -- Iff player facin right
 		

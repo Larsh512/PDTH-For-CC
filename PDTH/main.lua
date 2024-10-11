@@ -1,10 +1,27 @@
+-- TODO:
+-- Make Movement not be absolute crap.
+-- Make Level system,
+-- Make a damn money system,
+-- Make actuall police assault
+
+-- Current done:
+-- player sprites {&}
+
+
+
+
+
+
+
+
+
 local obsi = require("obsi2")
 local player
 -- local bot -- Unused
 local x,y = 1,1
 local w, h
 local policeassaultind
-local policeassault = false
+local policeassault = true
 print("Select between hoxton, dallas, chains, or wolf. all spelt lowercase. Iff you dont choose you will play as hoxton.")
 playercharoption = read()
 playerrotation = "right"
@@ -171,4 +188,4 @@ end
 
 obsi.init()
 term.setTextColor(colors.green)
-print("Thanks for playin the demo!")
+print("Thanks for playin!")

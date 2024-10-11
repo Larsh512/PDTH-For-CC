@@ -1,4 +1,4 @@
-# PDTH-For-CC (ComputerCraft Tweaked)
+# CC:The Heist (ComputerCraft Tweaked)
 ## a Payday The Heist recreation using CC And OBSI 2
 ### Current Version has:
 - hoxton dallas chains and wolf as playable characters.

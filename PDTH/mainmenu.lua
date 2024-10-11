@@ -1,13 +1,23 @@
 os.pullEvent = os.pullEventRaw
-
+local mf = require("morefonts")
+mf.setDefaultFontOptions({
+    condense = true,
+    font = "PDTH/Font",
+})
 local w,h = term.getSize()
-
+versionnum = "v0.1.1"
 function printCentered( y,s )
    local x = math.floor((w - string.len(s)) / 2)
    term.setCursorPos(x,y)
    term.clearLine()
    term.write( s )
 end
+function printFontCentered( y,s )
+    local x = math.floor((w - string.len(s)) / 2)
+    term.setCursorPos(x,y)
+    term.clearLine()
+    mf.write( s )
+ end
 
 local nOption = 1
 
@@ -32,9 +42,8 @@ end
 --GUI
 term.clear()
 local function drawFrontend()
-   printCentered( math.floor(h/2) - 3, "")
-   printCentered( math.floor(h/2) - 2, "CC:The Heist." )
-   printCentered( math.floor(h/2) - 1, "")
+    
+    printFontCentered( math.floor(h/2) - 5, "CC:The Heist.")
    printCentered( math.floor(h/2) + 0, ((nOption == 1) and "[ PLAY        ]") or "  PLAY         " )
    printCentered( math.floor(h/2) + 1, ((nOption == 2) and "[ UNAVAILABLE ]") or "  UNAVAILABLE  " )
    printCentered( math.floor(h/2) + 2, ((nOption == 3) and "[ QUIT        ]") or "  QUIT         " )

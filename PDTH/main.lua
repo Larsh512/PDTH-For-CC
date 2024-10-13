@@ -131,8 +131,7 @@ function obsi.update()
 	sleep(0.3)
  end
  if quittotitle == true then
-	
-	obsi.quit()
+ -- do nothing for now... Because its broken.
 end
  	if playercharoption == "dallas" then
 		if playerrotation == "right" then

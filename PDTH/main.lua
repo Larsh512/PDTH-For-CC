@@ -14,7 +14,7 @@
 
 
 
-
+local tArgs = {...}
 local obsi = require("obsi2")
 local player
 -- local bot -- Unused
@@ -22,8 +22,7 @@ local x,y = 1,1
 local w, h
 local policeassaultind
 local policeassault = true
-print("Select between hoxton, dallas, chains, or wolf. all spelt lowercase. Iff you dont choose you will play as hoxton.")
-playercharoption = read()
+playercharoption = tArgs[1]
 playerrotation = "right"
 function obsi.load()
 	if playercharoption == "hoxton" then -- the funni british man who swears
@@ -50,6 +49,7 @@ function obsi.update()
  right = obsi.keyboard.isDown("f") -- Right
  turnleft = obsi.keyboard.isDown("left") -- Left turn
  turnright = obsi.keyboard.isDown("right")  -- Right turn
+ quittotitle = obsi.keyboard.isDown("n") -- Quit to Title
  -- END OFF KEYBINDS
  local playerpixel = 1
  	if playerrotation == "right" then -- Iff player facin right
@@ -130,6 +130,10 @@ function obsi.update()
 	end
 	sleep(0.3)
  end
+ if quittotitle == true then
+	
+	obsi.quit()
+end
  	if playercharoption == "dallas" then
 		if playerrotation == "right" then
 			player = obsi.graphics.newImage("dallas.nfp")
@@ -185,7 +189,8 @@ function obsi.draw()
 		obsi.graphics.draw(policeassaultind,paw,pah)
 	end
 end
+function obsi.onQuit()
+	shell.run("PDTH/mainmenu.lua")
+end
 
 obsi.init()
-term.setTextColor(colors.green)
-print("Thanks for playin!")

@@ -5,6 +5,7 @@
 - a Rough barebones movement system (Bouta be redone).
 - movement directions.
 - use off Obsi 2 engine.
+- Basalt based Main Menu.
 ### what i plan to add:
 - Better movement system.
 - Actual levels lmao.

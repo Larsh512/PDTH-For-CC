@@ -18,7 +18,7 @@ local tArgs = {...}
 local obsi = require("obsi2")
 local player
 -- local bot -- Unused
-local player.x,player.y = 1,1
+local player.x, player.y = 1,1
 local w, h
 local policeassaultind
 local policeassault = true

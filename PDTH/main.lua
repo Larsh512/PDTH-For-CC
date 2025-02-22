@@ -18,10 +18,11 @@ local tArgs = {...}
 local obsi = require("obsi2")
 local player
 -- local bot -- Unused
-local x,y = 1,1
+local player.x,player.y = 1,1
 local w, h
 local policeassaultind
 local policeassault = true
+vel = 32
 playercharoption = tArgs[1]
 playerrotation = "right"
 function obsi.load()
@@ -51,62 +52,61 @@ function obsi.update()
  turnright = obsi.keyboard.isDown("right")  -- Right turn
  quittotitle = obsi.keyboard.isDown("n") -- Quit to Title
  -- END OFF KEYBINDS
- local playerpixel = 1
- 	if playerrotation == "right" then -- Iff player facin right
+ 	if playerrotation == "right" then -- If player facin right
 		
  		if forward == true then
-			x = x + playerpixel
+			player.x = player.x + vel * dt
  		end
 		 if backward == true then
-			x = x - playerpixel
+			player.x = player.x - vel * dt
 		 end
  		if left == true then
-		y = y + playerpixel
+		       player.y = player.y + vel * dt
  		end
  		if right == true then
-			y = y - playerpixel
+			player.y = player.y - vel * dt
  		end
-	elseif playerrotation == "left" then
+	elseif playerrotation == "left" then -- if he's facing left. 
 		if forward == true then
-			x = x - playerpixel
+			player.x = player.x - vel * dt
  		end
 		 if backward == true then
-			x = x + playerpixel
+		        player.x = player.x + vel * dt
 		 end
  		if left == true then
-		y = y - playerpixel
+		        player.y = player.y - vel * dt
  		end
  		if right == true then
-			y = y + playerpixel
+			player.y = player.y + vel * dt
  		end
-	elseif playerrotation == "forward" then
+	elseif playerrotation == "forward" then -- if facing forward
 		if forward == true then
-			y = y + playerpixel
+			player.y = player.y + vel * dt
 		end
 		if backward == true then
-			y = y - playerpixel
+			player.y = player.y - vel * dt
 		end
 		if left == true then
-			x = x + playerpixel
+			player.x = player.x + vel * dt
  		end
 		 if right == true then
-			x = x - playerpixel
+			player.x = player.x - vel * dt
 		end
-	elseif playerrotation == "backward" then
+	elseif playerrotation == "backward" then -- if facing backwards. 
 		if forward == true then
-			y = y - playerpixel
+			player.y = player.y - vel * dt
 		end
 		if backward == true then
-			y = y + playerpixel
+			player.y = player.y + vel * dt
 		end
 		if left == true then
-			x = x - playerpixel
+			player.x = player.x - vel * dt
  		end
 		 if right == true then
-			x = x + playerpixel
+			player.x = player.x + vel * dt
 		end
  	end
- if turnleft == true then
+ if turnleft == true then -- this sucks, But I'll deal with it l8r, Because I'm not dealing with this crap at 2 am.
 	if playerrotation == "right" then
 		playerrotation = "forward"
 	elseif playerrotation == "forward" then
@@ -131,7 +131,7 @@ function obsi.update()
 	sleep(0.3)
  end
  if quittotitle == true then
- -- do nothing for now... Because its broken.
+ -- do nothing for now... Because its broken. For reasons, Bcuz obsi2 does not like basalt.
 end
  	if playercharoption == "dallas" then
 		if playerrotation == "right" then
@@ -189,7 +189,8 @@ function obsi.draw()
 	end
 end
 function obsi.onQuit()
-	shell.run("PDTH/mainmenu.lua")
+	--shell.run("PDTH/mainmenu.lua")
+	-- NOT USED CURRENTLY DUE TO ISSUES.
 end
 
 obsi.init()

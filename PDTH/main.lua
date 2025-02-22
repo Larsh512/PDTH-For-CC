@@ -9,34 +9,61 @@
 
 
 
-
+local sprites = {
+  hoxton = {
+    right = obsi.graphics.newImage("hoxton.nfp"),
+    left = obsi.graphics.newImage("hoxtonleft.nfp"),
+    forward = obsi.graphics.newImage("hoxtonfor.nfp"),
+    backward = obsi.graphics.newImage("hoxtonback.nfp")
+  },
+  dallas = {
+    right = obsi.graphics.newImage("dallas.nfp"),
+    left = obsi.graphics.newImage("dallasleft.nfp"),
+    forward = obsi.graphics.newImage("dallasfor.nfp"),
+    backward = obsi.graphics.newImage("dallasback.nfp") 
+  },
+  Wolf = {
+    right = obsi.graphics.newImage("wolf.nfp"),
+    left = obsi.graphics.newImage("wolfleft.nfp"),
+    forward = obsi.graphics.newImage("wolffor.nfp"),
+    backward = obsi.graphics.newImage("wolfback.nfp")
+  },
+  chains = {
+    right = obsi.graphics.newImage("chains.nfp"),
+    left = obsi.graphics.newImage("chainsleft.nfp"),
+    forward = obsi.graphics.newImage("chainsfor.nfp"),
+    backward = obsi.graphics.newImage("chainsback.nfp")
+  }, 
+}
 
 
 
 
 local tArgs = {...}
 local obsi = require("obsi2")
-local player
--- local bot -- Unused
+local spriteName = playerSprites[playercharoption][playerrotation]
+local playersprite = obsi.graphics.newImage(spriteName)
+-- local bot -- Unused, Since this was just a test of sprite bulling rap. 
 local playerx, playery = 1,1
 local w, h
 local policeassaultind
 local policeassault = true
-vel = 32
+player_speed = 32
+vel = player_speed
 playercharoption = tArgs[1]
 playerrotation = "right"
 function obsi.load()
 	if playercharoption == "hoxton" then -- the funni british man who swears
-	player = obsi.graphics.newImage("hoxton.nfp") 
+	        playersprite = obsi.graphics.newImage("hoxton.nfp") 
 	elseif playercharoption == "dallas" then -- The one dude who's brother is autistic or something... Idk
-			player = obsi.graphics.newImage("dallas.nfp")
+		playersprite = obsi.graphics.newImage("dallas.nfp")
 	elseif playercharoption == "wolf" then -- wolf, One off my two favorites, Funni psychopath gamedev go weeeee
-		player = obsi.graphics.newImage("wolf.nfp")
+		playersprite = obsi.graphics.newImage("wolf.nfp")
 	elseif playercharoption == "chains" then -- Black dude, Thats it really... he's black... he has a gun... And... Yeah.
-		player = obsi.graphics.newImage("chains.nfp")
+		playersprite = obsi.graphics.newImage("chains.nfp")
 	else -- incase the player doesnt choose, Just make them my boi hox.
 		playercharoption = "hoxton"
-		player = obsi.graphics.newImage("hoxton.nfp")
+		playersprite = obsi.graphics.newImage("hoxton.nfp")
 	end
 	policeassaultind = obsi.graphics.newImage("Policeassault.nfp") -- Police assault indicator.
 end
@@ -132,51 +159,6 @@ function obsi.update()
  end
  if quittotitle == true then
  -- do nothing for now... Because its broken. For reasons, Bcuz obsi2 does not like basalt.
-end
- 	if playercharoption == "dallas" then
-		if playerrotation == "right" then
-			player = obsi.graphics.newImage("dallas.nfp")
-		elseif playerrotation == "left" then
-			player = obsi.graphics.newImage("dallasleft.nfp")
-		elseif playerrotation == "forward" then
-			player = obsi.graphics.newImage("dallasfor.nfp")
-		elseif playerrotation == "backward" then
-		player = obsi.graphics.newImage("dallasback.nfp")
-		end
-	end
-	if playercharoption == "wolf" then
-		if playerrotation == "right" then
-			player = obsi.graphics.newImage("wolf.nfp")
-		elseif playerrotation == "left" then
-			player = obsi.graphics.newImage("wolfleft.nfp")
-		elseif playerrotation == "forward" then
-			player = obsi.graphics.newImage("wolffor.nfp")
-		elseif playerrotation == "backward" then
-		player = obsi.graphics.newImage("wolfback.nfp")
-		end
-	end
-	if playercharoption == "hoxton" then
-		if playerrotation == "right" then
-			player = obsi.graphics.newImage("hoxton.nfp")
-		elseif playerrotation == "left" then
-			player = obsi.graphics.newImage("hoxtonleft.nfp")
-		elseif playerrotation == "forward" then
-			player = obsi.graphics.newImage("hoxtonfor.nfp")
-		elseif playerrotation == "backward" then
-			player = obsi.graphics.newImage("hoxtonback.nfp")
-		end
-	end
-	if playercharoption == "chains" then
-		if playerrotation == "right" then
-			player = obsi.graphics.newImage("chains.nfp")
-		elseif playerrotation == "left" then
-			player = obsi.graphics.newImage("chainsleft.nfp")
-		elseif playerrotation == "forward" then
-			player = obsi.graphics.newImage("chainsfor.nfp")
-		elseif playerrotation == "backward" then
-			player = obsi.graphics.newImage("chainsback.nfp")
-		end
-	end
 end
 
 function obsi.draw()

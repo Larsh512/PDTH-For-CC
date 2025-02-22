@@ -88,14 +88,12 @@ function obsi.update(dt)  -- Get delta time (dt) as an argument
 
   -- Rotation (Simplified)
   if turnleft then
-    playerrotation = {right="forward", forward="left", left="backward", backward="right"}[playerrotation]
+    playerrotation = {right="forward", forward="left", left="backward", backward="right"}
     playersprite = sprites[playercharoption][playerrotation] -- Update the sprite
-    sleep(0.3)  -- Consider using a timer instead of sleep
   end
   if turnright then
-    playerrotation = {right="backward", forward="right", left="forward", backward="left"}[playerrotation]
+    playerrotation = {right="backward", forward="right", left="forward", backward="left"}
     playersprite = sprites[playercharoption][playerrotation] -- Update the sprite
-    sleep(0.3) -- Consider using a timer instead of sleep
   end
 
   -- Quit to Title (Placeholder)

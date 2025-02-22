@@ -18,7 +18,7 @@ local tArgs = {...}
 local obsi = require("obsi2")
 local player
 -- local bot -- Unused
-local player.x, player.y = 1,1
+local playerx, playery = 1,1
 local w, h
 local policeassaultind
 local policeassault = true
@@ -55,55 +55,55 @@ function obsi.update()
  	if playerrotation == "right" then -- If player facin right
 		
  		if forward == true then
-			player.x = player.x + vel * dt
+			playerx = playerx + vel * dt
  		end
 		 if backward == true then
-			player.x = player.x - vel * dt
+			playerx = playerx - vel * dt
 		 end
  		if left == true then
-		       player.y = player.y + vel * dt
+		       playery = playery + vel * dt
  		end
  		if right == true then
-			player.y = player.y - vel * dt
+			playery = playery - vel * dt
  		end
 	elseif playerrotation == "left" then -- if he's facing left. 
 		if forward == true then
-			player.x = player.x - vel * dt
+			playerx = playerx - vel * dt
  		end
 		 if backward == true then
-		        player.x = player.x + vel * dt
+		        playerx = playerx + vel * dt
 		 end
  		if left == true then
-		        player.y = player.y - vel * dt
+		        playery = playery - vel * dt
  		end
  		if right == true then
-			player.y = player.y + vel * dt
+			playery = playery + vel * dt
  		end
 	elseif playerrotation == "forward" then -- if facing forward
 		if forward == true then
-			player.y = player.y + vel * dt
+			playery = playery + vel * dt
 		end
 		if backward == true then
-			player.y = player.y - vel * dt
+			playery = playery - vel * dt
 		end
 		if left == true then
-			player.x = player.x + vel * dt
+			playerx = playerx + vel * dt
  		end
 		 if right == true then
-			player.x = player.x - vel * dt
+			playerx = playerx - vel * dt
 		end
 	elseif playerrotation == "backward" then -- if facing backwards. 
 		if forward == true then
-			player.y = player.y - vel * dt
+			playery = playery - vel * dt
 		end
 		if backward == true then
-			player.y = player.y + vel * dt
+			playery = playery + vel * dt
 		end
 		if left == true then
-			player.x = player.x - vel * dt
+			playerx = playerx - vel * dt
  		end
 		 if right == true then
-			player.x = player.x + vel * dt
+			playerx = playerx + vel * dt
 		end
  	end
  if turnleft == true then -- this sucks, But I'll deal with it l8r, Because I'm not dealing with this crap at 2 am.

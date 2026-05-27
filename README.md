@@ -1,3 +1,5 @@
+#This Project is dead. It's been for a while now. This was way out of my league at the time.
+
 # CC:The Heist (ComputerCraft Tweaked)
 ## a Payday The Heist recreation using CC And OBSI 2
 ### Current Version has:
